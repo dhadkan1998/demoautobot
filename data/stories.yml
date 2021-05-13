@@ -1,0 +1,38 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: Story from Conversation ID 02ba9f9a50ce47aab33d809afd31dcc0
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: weekend
+  - action: utter_holiday
+  - intent: badmood
+  - action: utter_badmood
+  - intent: unknown
+  - action: utter_weekend
+  - intent: disagree
+  - action: utter_better

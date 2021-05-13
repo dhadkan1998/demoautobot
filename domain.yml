@@ -1,0 +1,54 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- holiday:
+    use_entities: true
+entities:
+- holiday
+slots: {}
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_holiday:
+  - text: My weekend was very good and a bit relaxed. Thanks for asking. How was yours ?
+  utter_badmood:
+  - text: oh really! why was it bad?
+  utter_weekend:
+  - text: okay! its fin, maybe we can discuss it later. i actually spent my time fishing on the weekend. Do you like fishing ?
+  utter_better:
+  - text: Thats fine. all of us do not like all things right ? lets do a lesson . maybe that will make you feel better.
+actions:
+- 'action: utter_holiday'
+- 'story: good'
+- 'intent: holiday'
+forms: {}
+e2e_actions: []
